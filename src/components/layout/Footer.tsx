@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 */}
           <div>
-            <h3 className="text-base font-medium mb-4">About OLX</h3>
+            <h3 className="text-base font-medium mb-4">About Revive</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -28,7 +28,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  OLX Blog
+                  Revive Blog
                 </Link>
               </li>
             </ul>
@@ -106,7 +106,7 @@ export function Footer() {
               </a>
             </div>
             <div>
-              <h4 className="text-sm font-medium mb-2">Download OLX App</h4>
+              <h4 className="text-sm font-medium mb-2">Download Revive App</h4>
               <div className="flex space-x-2">
                 <a href="#" className="block">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" className="h-10" />
@@ -121,7 +121,7 @@ export function Footer() {
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} OLX. All rights reserved.
+            &copy; {new Date().getFullYear()} Revive. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center">
