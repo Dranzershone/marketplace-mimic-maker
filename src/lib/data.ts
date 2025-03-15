@@ -1,5 +1,4 @@
-
-import { Category, Product, User } from "./types";
+import { Category, Product, User, SearchFilters } from "./types";
 
 export const users: User[] = [
   {
