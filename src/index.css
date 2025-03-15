@@ -141,8 +141,9 @@
     active:scale-[0.98];
   }
   
+  /* Modified product-card to not use @apply with group */
   .product-card {
-    @apply group relative overflow-hidden rounded-xl bg-white transition-all duration-300
+    @apply relative overflow-hidden rounded-xl bg-white transition-all duration-300
     hover:shadow-lg dark:bg-card;
   }
   
@@ -151,7 +152,12 @@
   }
   
   .product-card-image {
-    @apply h-full w-full object-cover transition-all duration-500 group-hover:scale-105;
+    @apply h-full w-full object-cover transition-all duration-500;
+  }
+  
+  /* Add a separate class for the group-hover effect */
+  .group:hover .product-card-image {
+    @apply scale-105;
   }
   
   .btn-primary {
