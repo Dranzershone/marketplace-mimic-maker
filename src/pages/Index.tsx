@@ -1,11 +1,12 @@
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Hero } from '@/components/home/Hero';
-import { Categories } from '@/components/home/Categories';
-import { FeaturedListings } from '@/components/home/FeaturedListings';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { WasteIdentifier } from '@/components/waste/WasteIdentifier';
+import { RecyclingMap } from '@/components/waste/RecyclingMap';
+import { WasteTips } from '@/components/waste/WasteTips';
+import { ShieldCheck, Recycle, MapPin } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -17,49 +18,86 @@ const Index = () => {
     >
       <Navbar />
       <main className="flex-grow">
-        <Hero />
-        <Categories />
-        <FeaturedListings />
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-r from-primary/[0.03] to-primary/[0.07]">
+          <div className="container-tight">
+            <div className="text-center mb-8 md:mb-12">
+              <motion.h1 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-3xl md:text-5xl font-bold mb-4"
+              >
+                Reduce Waste, Save the Planet
+              </motion.h1>
+              <motion.p 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
+              >
+                AI-powered waste identification and personalized recycling suggestions
+              </motion.p>
+            </div>
+            
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <WasteIdentifier />
+            </motion.div>
+          </div>
+        </section>
         
-        {/* Trust Section */}
+        {/* Recycling Map Section */}
+        <section className="py-16 bg-background">
+          <div className="container-tight">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Find Recycling Centers Near You</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Locate the nearest recycling facilities and drop-off points
+              </p>
+            </div>
+            
+            <RecyclingMap />
+          </div>
+        </section>
+        
+        {/* Waste Tips Section */}
+        <WasteTips />
+        
+        {/* Features Section */}
         <section className="py-16 bg-secondary">
           <div className="container-tight">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Why Choose OLX?</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">Join millions of users who buy and sell on our platform</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">How EcoScan Works</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Our AI-powered platform makes recycling easier than ever</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-card p-6 rounded-xl text-center">
+              <div className="group bg-white dark:bg-card p-6 rounded-xl text-center transition-all hover:shadow-lg">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                  </svg>
+                  <ShieldCheck size={24} />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Secure Transactions</h3>
-                <p className="text-muted-foreground">Our safety features help you buy and sell with confidence</p>
+                <h3 className="text-lg font-bold mb-2">AI Identification</h3>
+                <p className="text-muted-foreground">Upload a photo and our AI will identify the material type</p>
               </div>
               
-              <div className="bg-white dark:bg-card p-6 rounded-xl text-center">
+              <div className="group bg-white dark:bg-card p-6 rounded-xl text-center transition-all hover:shadow-lg">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23" />
-                  </svg>
+                  <Recycle size={24} />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Free Listings</h3>
-                <p className="text-muted-foreground">List your items for free and reach thousands of potential buyers</p>
+                <h3 className="text-lg font-bold mb-2">Recycling Guides</h3>
+                <p className="text-muted-foreground">Get personalized recycling and upcycling instructions</p>
               </div>
               
-              <div className="bg-white dark:bg-card p-6 rounded-xl text-center">
+              <div className="group bg-white dark:bg-card p-6 rounded-xl text-center transition-all hover:shadow-lg">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" x2="22" y1="12" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10" />
-                  </svg>
+                  <MapPin size={24} />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Local Marketplace</h3>
-                <p className="text-muted-foreground">Find items in your area and connect with local buyers and sellers</p>
+                <h3 className="text-lg font-bold mb-2">Location Services</h3>
+                <p className="text-muted-foreground">Find nearby recycling centers and drop-off locations</p>
               </div>
             </div>
           </div>
@@ -68,15 +106,15 @@ const Index = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary/[0.03] to-primary/[0.07]">
           <div className="container-tight text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to start selling?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to reduce your waste?</h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Turn your unused items into cash. Listing is quick, easy, and free!
+              Join our community of eco-conscious individuals making a difference one item at a time.
             </p>
             <Link
-              to="/sell"
+              to="/community"
               className="btn-primary text-base px-6 py-3"
             >
-              Start Selling Now
+              Join Our Community
             </Link>
           </div>
         </section>
