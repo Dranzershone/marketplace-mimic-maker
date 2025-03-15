@@ -38,8 +38,8 @@ export function Navbar() {
           to="/" 
           className="flex items-center space-x-2 text-xl font-bold text-foreground"
         >
-          <span className="bg-primary text-white h-8 w-8 flex items-center justify-center rounded">O</span>
-          <span>OLX</span>
+          <span className="bg-primary text-white h-8 w-8 flex items-center justify-center rounded">R</span>
+          <span>Revive</span>
         </Link>
 
         {/* Desktop Navigation */}
